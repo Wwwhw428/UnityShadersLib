@@ -1,4 +1,4 @@
-﻿{
+{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -42,6 +42,8 @@
         "**/*.meta":true,
         "**/*.prefab":true,
         "**/*.unity":true,
+        "**/*.csproj": true,
+        "**/*.sln": true,
         "build/":true,
         "Build/":true,
         "Library/":true,
@@ -50,6 +52,16 @@
         "Obj/":true,
         "ProjectSettings/":true,
         "temp/":true,
-        "Temp/":true
+        "Temp/":true,
+        "UserSettings/":true,
+        "Logs/":true,
+        "Assets/Artwork/Model":true,
+        "Assets/Artwork/Materials":true,
+        "Assets/Artwork/Animation":true,
+        "Assets/Artwork/Audio":true,
+        "Assets/Artwork/Prefabs":true,
+        "Assets/Artwork/UI":true,
+        "Assets/Artwork/Raw":true,
+        "Assets/Artwork/Textures":true,
     }
 }
