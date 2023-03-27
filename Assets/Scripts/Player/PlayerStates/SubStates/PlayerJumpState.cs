@@ -1,3 +1,5 @@
+using Wwwhw.SO.Player;
+
 public class PlayerJumpState : PlayerAbilityState
 {
     public int AmountOfJumpLeft { get; private set; }

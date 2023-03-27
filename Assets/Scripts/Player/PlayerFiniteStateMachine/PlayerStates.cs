@@ -1,5 +1,6 @@
-using MyCell.CoreSystem;
-using MyCell.CoreSystem.CoreComponent;
+using Wwwhw.CoreSystem;
+using Wwwhw.CoreSystem.Component;
+using Wwwhw.SO.Player;
 using UnityEngine;
 
 public class PlayerStates

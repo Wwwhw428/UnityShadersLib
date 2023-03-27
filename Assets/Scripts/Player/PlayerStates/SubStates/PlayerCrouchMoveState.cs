@@ -1,13 +1,15 @@
-public class PlayerCrunchMoveState : PlayerGroundStates
+using Wwwhw.SO.Player;
+
+public class PlayerCrouchMoveState : PlayerGroundStates
 {
-    public PlayerCrunchMoveState(Player player, PlayerStateMachine statesMachine, PlayerData_SO playerData, string animBoolName) : base(player, statesMachine, playerData, animBoolName)
+    public PlayerCrouchMoveState(Player player, PlayerStateMachine statesMachine, PlayerData_SO playerData, string animBoolName) : base(player, statesMachine, playerData, animBoolName)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        Player.SetColliderHeight(PlayerData.CrunchColliderHeight);
+        Player.SetColliderHeight(PlayerData.CrouchColliderHeight);
     }
 
     public override void Exit()
@@ -20,7 +22,7 @@ public class PlayerCrunchMoveState : PlayerGroundStates
     {
         base.LogicUpdate();
         if (inputX == 0)
-            StateMachine.ChangeState(Player.CrunchIdleState);
+            StateMachine.ChangeState(Player.CrouchIdleState);
         else if (jumpInput)
         {
             Player.InputHandler.UseJumpInput();
@@ -30,6 +32,6 @@ public class PlayerCrunchMoveState : PlayerGroundStates
             StateMachine.ChangeState(Player.MoveState);
         }
         Movement?.CheckIfShouldFlip(inputX);
-        Movement?.SetVelocityX(PlayerData.CrunchMovementVelocity * inputX);
+        Movement?.SetVelocityX(PlayerData.CrouchMovementVelocity * inputX);
     }
 }

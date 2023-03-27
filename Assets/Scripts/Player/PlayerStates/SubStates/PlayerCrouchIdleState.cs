@@ -1,15 +1,16 @@
 using UnityEngine;
+using Wwwhw.SO.Player;
 
-public class PlayerCrunchIdleState : PlayerGroundStates
+public class PlayerCrouchIdleState : PlayerGroundStates
 {
-    public PlayerCrunchIdleState(Player player, PlayerStateMachine statesMachine, PlayerData_SO playerData, string animBoolName) : base(player, statesMachine, playerData, animBoolName)
+    public PlayerCrouchIdleState(Player player, PlayerStateMachine statesMachine, PlayerData_SO playerData, string animBoolName) : base(player, statesMachine, playerData, animBoolName)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        Player.SetColliderHeight(PlayerData.CrunchColliderHeight);
+        Player.SetColliderHeight(PlayerData.CrouchColliderHeight);
     }
 
     public override void Exit()
@@ -30,7 +31,7 @@ public class PlayerCrunchIdleState : PlayerGroundStates
             Player.InputHandler.UseJumpInput();
         }
         if (inputX != 0)
-            StateMachine.ChangeState(Player.CrunchMoveState);
+            StateMachine.ChangeState(Player.CrouchMoveState);
         else if (inputY > -0.01f && !isTouchingCeiling)
             StateMachine.ChangeState(Player.IdleState);
     }

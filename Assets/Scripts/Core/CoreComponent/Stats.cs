@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MyCell.CoreSystem.CoreComponent
+namespace Wwwhw.CoreSystem.Component
 {
     public class Stats : CoreComponent
     {

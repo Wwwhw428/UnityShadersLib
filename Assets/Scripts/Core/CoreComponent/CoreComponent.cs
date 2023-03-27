@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MyCell.CoreSystem.CoreComponent
+namespace Wwwhw.CoreSystem.Component
 {
     public class CoreComponent : MonoBehaviour
     {

@@ -1,3 +1,5 @@
+using Wwwhw.SO.Player;
+
 public class PlayerTouchingWallState : PlayerStates
 {
     protected int inputX;

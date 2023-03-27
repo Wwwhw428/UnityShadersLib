@@ -1,4 +1,5 @@
-using MyCell.CoreSystem.CoreComponent;
+using Wwwhw.CoreSystem.Component;
+using Wwwhw.SO.Player;
 using UnityEngine;
 public class PlayerGroundStates : PlayerStates
 {
@@ -32,15 +33,7 @@ public class PlayerGroundStates : PlayerStates
         inputY = Player.InputHandler.InputY;
         jumpInput = Player.InputHandler.JumpInput;
 
-        if (Player.InputHandler.AttackInput[(int)CombatInput.primary] && !isTouchingCeiling)
-        {
-            StateMachine.ChangeState(Player.PrimaryAttackState);
-        }
-        else if (Player.InputHandler.AttackInput[(int)CombatInput.secondary] && !isTouchingCeiling)
-        {
-            StateMachine.ChangeState(Player.SecondaryAttackState);
-        }
-        else if (inputY >= 0 && jumpInput)
+        if (inputY >= 0 && jumpInput)
         {
             StateMachine.ChangeState(Player.JumpState);
         }

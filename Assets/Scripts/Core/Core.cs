@@ -1,28 +1,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Wwwhw.CoreSystem.Component;
 
-namespace MyCell.CoreSystem
+namespace Wwwhw.CoreSystem
 {
     public class Core : MonoBehaviour
     {
-        public readonly List<CoreComponent.CoreComponent> CoreComponents = new List<CoreComponent.CoreComponent>();
+        public readonly List<Component.CoreComponent> CoreComponents = new List<Component.CoreComponent>();
         [field: SerializeField] public GameObject Parent { get; private set; }
         public Transform EntityTransform { get; private set; }
 
 
         public void LogicUpdate()
         {
-            foreach (CoreComponent.CoreComponent coreComponent in CoreComponents)
+            foreach (Component.CoreComponent coreComponent in CoreComponents)
                 coreComponent.LogicUpdate();
         }
-        public void AddCoreComponent(CoreComponent.CoreComponent component)
+        public void AddCoreComponent(Component.CoreComponent component)
         {
             if (!CoreComponents.Contains(component))
                 CoreComponents.Add(component);
         }
 
-        private T GetCoreComponent<T>() where T : CoreComponent.CoreComponent
+        private T GetCoreComponent<T>() where T : Component.CoreComponent
         {
             var comp = CoreComponents.OfType<T>().FirstOrDefault();
 
@@ -38,7 +39,7 @@ namespace MyCell.CoreSystem
             return null;
         }
 
-        public T GetCoreComponent<T>(ref T value) where T : CoreComponent.CoreComponent
+        public T GetCoreComponent<T>(ref T value) where T : Component.CoreComponent
         {
             value = GetCoreComponent<T>();
 

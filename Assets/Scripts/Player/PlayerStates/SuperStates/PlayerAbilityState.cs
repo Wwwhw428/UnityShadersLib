@@ -1,4 +1,5 @@
-using MyCell.CoreSystem.CoreComponent;
+using Wwwhw.CoreSystem.Component;
+using Wwwhw.SO.Player;
 
 public class PlayerAbilityState : PlayerStates
 {

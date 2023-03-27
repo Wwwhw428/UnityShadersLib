@@ -1,5 +1,6 @@
 using System;
-using MyCell.CoreSystem.CoreComponent;
+using Wwwhw.CoreSystem.Component;
+using Wwwhw.SO.Player;
 using UnityEngine;
 
 public class PlayerInAirState : PlayerStates

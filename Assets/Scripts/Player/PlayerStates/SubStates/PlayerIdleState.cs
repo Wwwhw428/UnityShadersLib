@@ -1,3 +1,5 @@
+using Wwwhw.SO.Player;
+
 public class PlayerIdleState : PlayerGroundStates
 {
     public PlayerIdleState(Player player, PlayerStateMachine statesMachine, PlayerData_SO playerData, string animBoolName) : base(player, statesMachine, playerData, animBoolName)
@@ -20,7 +22,7 @@ public class PlayerIdleState : PlayerGroundStates
         }
         else if(inputY < 0)
         {
-            StateMachine.ChangeState(Player.CrunchIdleState);
+            StateMachine.ChangeState(Player.CrouchIdleState);
         }
     }
 }
